@@ -6,7 +6,7 @@ router.get("/:code/:name",(req,res)=>{
     const sql=`INSERT INTO country(code,name) value('${req.params.code}','${req.params.name}');`
     con.query(sql,(err,result)=>{
         if(err) {
-            res.status(404).send('エラーです');
+            res.status(400).send('エラーです');
         };
     });
 });
